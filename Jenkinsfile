@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo 'Obteniendo ...'
+        echo 'Compilando'
       }
     }
     stage('Test') {
