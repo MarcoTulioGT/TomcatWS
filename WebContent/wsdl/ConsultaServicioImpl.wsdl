@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://com.bsd.tigo" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://com.bsd.tigo" xmlns:intf="http://com.bsd.tigo" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://com.bsd.tigo" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="Sumar">
+    <complexType>
+     <sequence>
+      <element name="p" type="impl:consulta"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="consulta">
+    <sequence>
+     <element name="nombre" nillable="true" type="xsd:string"/>
+     <element name="valor1" type="xsd:int"/>
+     <element name="valor2" type="xsd:int"/>
+    </sequence>
+   </complexType>
+   <element name="SumarResponse">
+    <complexType>
+     <sequence>
+      <element name="SumarReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="SumarRequest">
+
+      <wsdl:part element="impl:Sumar" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="SumarResponse">
+
+      <wsdl:part element="impl:SumarResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ConsultaServicioImpl">
+
+      <wsdl:operation name="Sumar">
+
+         <wsdl:input message="impl:SumarRequest" name="SumarRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:SumarResponse" name="SumarResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ConsultaServicioImplSoapBinding" type="impl:ConsultaServicioImpl">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="Sumar">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="SumarRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="SumarResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ConsultaServicioImplService">
+
+      <wsdl:port binding="impl:ConsultaServicioImplSoapBinding" name="ConsultaServicioImpl">
+
+         <wsdlsoap:address location="http://localhost:8080/Calculadora/services/ConsultaServicioImpl"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
