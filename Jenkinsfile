@@ -9,6 +9,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Compilando'
+        echo 'Empaquetando'
       }
     }
     stage('Test') {
