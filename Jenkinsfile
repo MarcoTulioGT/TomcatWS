@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'Ambiente'
+    }
+    
+  }
   stages {
     stage('GitHub') {
       steps {
@@ -17,5 +22,8 @@ pipeline {
         echo 'gfgfgfg'
       }
     }
+  }
+  environment {
+    Desarrollo = 'DEV'
   }
 }
