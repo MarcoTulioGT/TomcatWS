@@ -6,7 +6,7 @@ pipeline {
     
   }
   stages {
-    stage('GitHub') {
+    stage('Build') {
       steps {
         echo 'Obteniendo ...'
       }
@@ -22,8 +22,5 @@ pipeline {
         echo 'gfgfgfg'
       }
     }
-  }
-  environment {
-    Desarrollo = 'DEV'
   }
 }
