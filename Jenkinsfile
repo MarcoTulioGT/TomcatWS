@@ -14,7 +14,7 @@ pipeline {
         echo 'Verificando...'
         sh 'pwd'
           script {
-           def mvnHome = tool 'Maven3.5'
+           def mvnHome = tool 'Maven_Oracle'
            env.PATH = "${mvnHome}/bin:${env.PATH}"
            echo "var mvnHome='${mvnHome}'"
            echo "var env.PATH='${env.PATH}'"
