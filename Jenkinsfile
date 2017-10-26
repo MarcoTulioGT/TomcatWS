@@ -13,6 +13,7 @@ pipeline {
       steps {
         echo 'Verificando...'
         sh 'pwd'
+        sh "mvn --version"
         echo 'Compilando...'
         echo 'Empaquetando...'
         echo 'Desplegando...'
