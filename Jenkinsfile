@@ -19,7 +19,7 @@ pipeline {
            echo "var mvnHome='${mvnHome}'"
            echo "var env.PATH='${env.PATH}'"
            echo 'Compilando aplicación'
-           sh 'mvn --version'
+           sh 'mvn deploy'
                 }
 
         echo 'Compilando...'
