@@ -1,15 +1,13 @@
 pipeline {
-  agent {
-    node {
-      label 'Ambiente'
-    }
+  agent any
     
   }
   stages {
     stage('Build') {
       steps {
-        echo 'Compilando'
-        echo 'Empaquetando'
+        echo 'Compilando...'
+        echo 'Empaquetando...'
+        echo 'Desplegando...'
       }
     }
     stage('Test') {
@@ -17,10 +15,9 @@ pipeline {
         echo 'Testing..'
       }
     }
-    stage('Deploy') {
+    stage('Artefactory') {
       steps {
         echo 'Deploying....'
-        echo 'gfgfgfg'
       }
     }
   }
