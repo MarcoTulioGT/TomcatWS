@@ -19,7 +19,7 @@ pipeline {
            echo "var mvnHome='${mvnHome}'"
            echo "var env.PATH='${env.PATH}'"
            echo 'Compilando aplicación'
-           sh 'sudo -u jenkins mvn compile'
+           sh 'mvn --version'
                 }
 
         echo 'Compilando...'
