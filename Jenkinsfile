@@ -4,15 +4,15 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Verificando...'
-        echo 'Compilando...'
-        echo 'Empaquetando...'
-        echo 'Desplegando...'
         script
         {
            echo 'Instala el paquete generado en el repositorio maven'
            sh 'mvn install -Dmaven.test.skip=true'
 
         }
+        echo 'Compilando...'
+        echo 'Empaquetando...'
+        echo 'Desplegando...'
       }
     }
     stage('Test') {
