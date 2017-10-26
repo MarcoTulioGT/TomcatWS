@@ -35,14 +35,13 @@ pipeline {
         echo 'Testing..'
       }
     }
-       // Get Artifactory server instance, defined in the Artifactory Plugin administration page.
-    def server = Artifactory.server "Artifactory_CRM"
-    // Create an Artifactory Maven instance.
-    def rtMaven = Artifactory.newMavenBuild()
-    def buildInfo
     stage('Artefactory') {
       steps {
+        script{
+                   // Get Artifactory server instance, defined in the Artifactory Plugin administration page.
+        def server = Artifactory.server "Artifactory_CRM"
         echo 'Deploying....'
+        }
       }
     }
   }
