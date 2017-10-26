@@ -27,7 +27,7 @@ pipeline {
         echo 'Empaquetando...'
           sh 'mvn install'
         echo 'Desplegando...'
-          sh 'mvn deploy'
+          sh 'mvn install'
       }
     }
     stage('Test') {
@@ -35,10 +35,17 @@ pipeline {
         echo 'Testing..'
       }
     }
+    node{
+       // Get Artifactory server instance, defined in the Artifactory Plugin administration page.
+    def server = Artifactory.server "SERVER_ID"
+    // Create an Artifactory Maven instance.
+    def rtMaven = Artifactory.newMavenBuild()
+    def buildInfo
     stage('Artefactory') {
       steps {
         echo 'Deploying....'
       }
+    }
     }
   }
 }
