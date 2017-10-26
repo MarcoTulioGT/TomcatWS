@@ -12,10 +12,7 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Verificando...'
-        script
-        {
-           sh 'mvn --version'
-        }
+        sh 'mvn --version'
         echo 'Compilando...'
         echo 'Empaquetando...'
         echo 'Desplegando...'
