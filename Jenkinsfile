@@ -14,7 +14,7 @@ pipeline {
         echo 'Verificando...'
         script
         {
-           sh 'mvn --version'
+           sh ' sudo mvn --version'
         }
         echo 'Compilando...'
         echo 'Empaquetando...'
