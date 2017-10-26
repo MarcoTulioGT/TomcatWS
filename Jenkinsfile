@@ -13,7 +13,15 @@ pipeline {
       steps {
         echo 'Verificando...'
         sh 'pwd'
-        sh "mvn --version"
+          script {
+           def mvnHome = tool 'M3'
+           env.PATH = "${mvnHome}/bin:${env.PATH}"
+           echo "var mvnHome='${mvnHome}'"
+           echo "var env.PATH='${env.PATH}'"
+           echo 'Compilando aplicación'
+           sh 'sudo -u jenkins mvn compile'
+                }
+
         echo 'Compilando...'
         echo 'Empaquetando...'
         echo 'Desplegando...'
