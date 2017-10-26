@@ -6,6 +6,7 @@ pipeline {
         echo 'Compilando...'
         echo 'Empaquetando...'
         echo 'Desplegando...'
+        sh 'mvn --version'
       }
     }
     stage('Test') {
