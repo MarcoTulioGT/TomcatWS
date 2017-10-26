@@ -1,14 +1,20 @@
 pipeline {
   agent any
   stages {
+    
+    stage('Git') 
+    {
+      steps 
+      {
+        git(url: 'https://github.com/MarcoTulioGT/TomcatWS.git')
+      }
+    }
     stage('Build') {
       steps {
         echo 'Verificando...'
         script
         {
-           echo 'Instala el paquete generado en el repositorio maven'
-           sh 'mvn install -Dmaven.test.skip=true'
-
+           sh 'mvn --version'
         }
         echo 'Compilando...'
         echo 'Empaquetando...'
