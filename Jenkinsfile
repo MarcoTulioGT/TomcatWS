@@ -43,7 +43,7 @@ pipeline {
         // Create an Artifactory Maven instance.
        def rtMaven = Artifactory.newMavenBuild()
        def buildInfo
-           rtMaven.tool =mvnHome
+           rtMaven.tool = 'Maven_Oracle'
           rtMaven.deployer releaseRepo:'BPM', server: server
         echo 'Deploying....'
         }
