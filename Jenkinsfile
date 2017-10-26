@@ -44,7 +44,9 @@ pipeline {
        def rtMaven = Artifactory.newMavenBuild()
        def buildInfo
            rtMaven.tool = 'Maven_Oracle'
-          rtMaven.deployer releaseRepo:'BPM', server: server
+          rtMaven.deployer releaseRepo:'Tigo', server: server
+           buildInfo = rtMaven.run pom: 'pom.xml', goals: 'clean install'
+             server.publishBuildInfo buildInfo
         echo 'Deploying....'
         }
       }
