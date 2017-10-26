@@ -19,12 +19,15 @@ pipeline {
            echo "var mvnHome='${mvnHome}'"
            echo "var env.PATH='${env.PATH}'"
            echo 'Compilando aplicación'
-           sh 'mvn deploy'
+           sh 'mvn clean'
                 }
 
         echo 'Compilando...'
+          sh 'mvn compile'
         echo 'Empaquetando...'
+          sh 'mvn install'
         echo 'Desplegando...'
+          sh 'mvn deploy'
       }
     }
     stage('Test') {
