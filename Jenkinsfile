@@ -53,12 +53,7 @@ pipeline {
         }
       }
 	  
-	   mail body: 'Se desplego en Artefactory',
-                     from: 'Ic@tigo.com.gt',
-                     replyTo: 'ctcatalan@tigo.com.gt',
-                     subject: 'El proyecto se desplego correctamente',
-                     to: 'ctcatalan@tigo.com.gt'
-    }
+   }
 	
 	
 }
