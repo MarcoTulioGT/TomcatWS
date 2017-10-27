@@ -54,11 +54,15 @@ pipeline {
       }
     }
 	
-	  stage('Email') {
-      steps {
- 	mail to: ctcatalan@tigo.com.gt, subject: 'The Pipeline failed :('
-	  }
-	  }
 	
 }
+
+    post {
+        always {
+            mail to: ctcatalan@tigo.com.gt, subject: 'The Pipeline OK :('
+        }
+        failure {
+            mail to: ctcatalan@tigo.com.gt, subject: 'The Pipeline failed :('
+        }
+    }
 }
