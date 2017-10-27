@@ -48,12 +48,12 @@ pipeline {
            buildInfo = rtMaven.run pom: 'pom.xml', goals: 'clean install'
              server.publishBuildInfo buildInfo
         echo 'Deploying....'
-       /*   if(currentBuild.result = "FAILURE")
+          if(${currentBuild.result} = "FAILURE")
           {
             echo 'El despliegue en Artefactory Fallo'
           }else{
             echo 'Todo funciono Correctamente'
-        }*/
+        }
           echo "RESULT: ${currentBuild.result}"
         }
       }
