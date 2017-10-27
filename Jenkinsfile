@@ -7,7 +7,7 @@ pipeline {
 	   // properties([pipelineTriggers([[$class: 'GitHubPushTrigger'], pollSCM('H/3 * * * *')])])
       steps 
       {
-        git url: 'https://github.com/MarcoTulioGT/TomcatWS.git'
+        git poll: true, url: 'https://github.com/MarcoTulioGT/TomcatWS.git'
       }
     }
     stage('Build') {
