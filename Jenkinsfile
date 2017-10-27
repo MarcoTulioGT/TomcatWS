@@ -48,15 +48,20 @@ pipeline {
            buildInfo = rtMaven.run pom: 'pom.xml', goals: 'clean install'
              server.publishBuildInfo buildInfo
         echo 'Deploying....'
-          if(currentBuild.result = 'FAILURE')
-          {
-            echo 'El despliegue en Artefactory Fallo'
-          }else{
-            echo 'Todo funciono Correctamente'
-        }
-          echo "RESULT: ${currentBuild.result}"
+        echo "RESULT: ${currentBuild.result}"
         }
       }
     }
+	 stage('Enviar Correo') {
+	  emailext (
+      subject: "STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+      body: """<p>STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+        <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
+      recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+    )
+	 
+	 }
+	
+	
   }
 }
