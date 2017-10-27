@@ -52,6 +52,12 @@ pipeline {
         echo "RESULT: ${currentBuild.result}"
         }
       }
+	  
+	   mail body: 'Se desplego en Artefactory',
+                     from: 'Ic@tigo.com.gt',
+                     replyTo: 'ctcatalan@tigo.com.gt',
+                     subject: 'El proyecto se desplego correctamente',
+                     to: 'ctcatalan@tigo.com.gt'
     }
 	
 	
@@ -59,10 +65,10 @@ pipeline {
 
     post {
         always {
-            mail to: ctcatalan@tigo.com.gt, subject: 'The Pipeline OK :('
+             echo "RESULT: ${currentBuild.result}"
         }
         failure {
-            mail to: ctcatalan@tigo.com.gt, subject: 'The Pipeline failed :('
+            echo "RESULT: ${currentBuild.result}"
         }
     }
 }
