@@ -88,4 +88,10 @@
     <version>1.6.2</version>
 </dependency>
   </dependencies>
+  <pluginRepositories>
+    <pluginRepository>
+        <id>smartbear-sweden-plugin-repository</id>
+        <url>http://www.soapui.org/repository/maven2/</url>
+    </pluginRepository>
+</pluginRepositories>
 </project>
