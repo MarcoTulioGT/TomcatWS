@@ -33,7 +33,7 @@ pipeline {
     }
     stage('Test') {
       steps {
-	sh 'export DISPLAY=:0'
+	sh 'unset DISPLAY'
         sh 'mvn com.smartbear.soapui:soapui-maven-plugin:4.6.1:test'
       }
     }
