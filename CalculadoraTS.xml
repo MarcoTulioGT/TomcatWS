@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite id="e0d812eb-2841-4a05-aca8-eb337ebe7e12" name="CalculadoraTestSuite" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="0720813b-2773-408e-8a98-d4437111b3ca" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Sumar TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="42f5946a-8d15-48fa-8e8e-d1b54d33fc4b" name="Sumar"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ConsultaServicioImplSoapBinding</con:interface><con:operation>Sumar</con:operation><con:request name="Sumar" id="1fe5ac82-055f-4d9c-9448-1c1b24029f6f"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.22.71.6:8090/Calculadora/services/ConsultaServicioImpl</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:com="http://com.bsd.tigo">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <com:Sumar>\r
+         <com:p>\r
+            <com:nombre>Marco Tulio</com:nombre>\r
+            <com:valor1>1000</com:valor1>\r
+            <com:valor2>1000</com:valor2>\r
+         </com:p>\r
+      </com:Sumar>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://com.bsd.tigo/ConsultaServicioImpl/SumarRequest" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite>
