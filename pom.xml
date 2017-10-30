@@ -34,7 +34,7 @@
         <password>tomcat</password>
     </configuration>
 </plugin>
-      <plugin>
+    <!--   <plugin>
     <groupId>com.smartbear.soapui</groupId>
     <artifactId>soapui-maven-plugin</artifactId>
     <version>4.6.1</version>
@@ -61,7 +61,7 @@
             <phase>test</phase>
         </execution>
     </executions>
-</plugin>
+</plugin>-->
     </plugins>
   </build>
   <dependencies>
